@@ -18,7 +18,7 @@ public class InformationService {
     }
 
     public String getUserServicePort() {
-//        return informationDao.getUserServicePort();
-        return informationDao.getUserServicePortWithOutLoadBalance();
+        return informationDao.getUserServicePort();
+//        return informationDao.getUserServicePortWithOutLoadBalance();
     }
 }
