@@ -12,10 +12,20 @@ public class InformationController {
     private InformationService service;
 
     @RequestMapping("test/info")
-    public RestResponse<String> getUserName(Long id){
+    public RestResponse<String> getInfomation(Long id){
         String userName = RestResponse.success(service.getUserName(id)).getResult();
         String companyName = RestResponse.success(service.getCompanyName()).getResult();
 
         return RestResponse.success(userName + companyName);
+    }
+
+    @RequestMapping("test/user")
+    public RestResponse<String> getUserName(Long id){
+        return RestResponse.success(service.getUserName(id));
+    }
+
+    @RequestMapping("test/port")
+    public RestResponse<String> testPort(){
+        return RestResponse.success(service.getUserServicePort());
     }
 }

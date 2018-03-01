@@ -23,12 +23,6 @@ public class HttpClientAutoConfiguration {
 		this.properties = properties;
 	}
 	
-	@Autowired
-	private LogbookHttpRequestInterceptor logbookHttpRequestInterceptor;
-	
-	@Autowired
-	private LogbookHttpResponseInterceptor logbookHttpResponseInterceptor;
-	
 	/**
 	 * httpclient bean 的定义
 	 * @return
@@ -43,8 +37,6 @@ public class HttpClientAutoConfiguration {
 				.setUserAgent(properties.getAgent())
 				.setMaxConnPerRoute(properties.getMaxConnPerRoute())
 				.setMaxConnTotal(properties.getMaxConnTotaol())
-				.addInterceptorFirst(logbookHttpRequestInterceptor)
-				.addInterceptorFirst(logbookHttpResponseInterceptor)
 				.build();
 		return client;
 	}

@@ -16,4 +16,9 @@ public class InformationService {
     public String getCompanyName() {
         return informationDao.getCompanyName();
     }
+
+    public String getUserServicePort() {
+//        return informationDao.getUserServicePort();
+        return informationDao.getUserServicePortWithOutLoadBalance();
+    }
 }
